@@ -73,11 +73,11 @@ Screen:
                     md_bg_color: 229/255.0,150/255.0,38/255.0,1
                     on_release: root.manager.current="number"
                 MDLabel:
-                    text: "   Baboucarr Bajie"
+                    text: "   Your Name"
                     size_hint_y:None 
                     height: self.texture_size[1]
                 MDLabel:
-                    text: "    bbabucarr32@gmail.com\\n"
+                    text: "    yourEmail@gmail.com\\n"
                     size_hint_y:None 
                     height: self.texture_size[1] 
                     font_style: "Caption"
@@ -170,8 +170,8 @@ class TheBadjie(MDApp):
     def sendMessage(self):
         pass
         try:
-            account_sid = 'AC6e55cf0ae5a8caa8ab3774998f1de4ab' 
-            auth_token = "e5fd5a778413a4b33643304bd405522c"
+            account_sid = 'AC6e55cf0ae5a8caa8ab3774098f1de4ab' 
+            auth_token = "e5fd5a772413a4b33643304bd405522c"
             text_message = self.root.ids.screen_manager.get_screen("main").ids.message.text
             client = Client(account_sid, auth_token)
             self.messsageSid = ""
@@ -183,7 +183,7 @@ class TheBadjie(MDApp):
                 if message_splitter[0] in self.phone_numbers:  # single phone number to send to condition
 
                     message = client.messages.create(
-                        from_="+1 831 304 3302",
+                        from_="+yourTwilioNumber",
                         body=f'Message=>\n{text_message[int(space_index + 1):]}',
                         to=f'{single_Num}'
                     )
@@ -195,7 +195,7 @@ class TheBadjie(MDApp):
                 for key, value in self.phone_numbers.items():
                     print(value)
                     message = client.messages.create(
-                        from_="+1 831 304 3302",
+                        from_="+yourTwilioNumber",
                         body=f'Password=>\n{text_message}',
                         to=f'{value}'
                     )

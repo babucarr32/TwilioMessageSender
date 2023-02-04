@@ -70,9 +70,9 @@ class TheBadjie(MDApp):
         client = Client(account_sid, auth_token)
         self.messsageSid = ""
         client.messages.create(
-            from_="+13092712302",
+            from_="+yourTwillioNumber",
             body=f'Message=> {text_message}',
-            to="+2203626260"
+            to="TheNumberOfThePersonYouWantToSendTo"
         )
 
 
